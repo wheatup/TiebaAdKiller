@@ -1,0 +1,24 @@
+{
+   "manifest_version": 2,
+   "name": "屏蔽贴吧广告",
+   "version": "0.1.0",
+   "description": "针对百度贴吧内伪装成帖子及回帖的广告进行屏蔽，给您清爽的浏览体验",
+   "background": {
+      "scripts": ["background.js"],
+      "persistant": false
+   },
+   "icons": {
+      "128": "icons/icon-128.png",
+      "48": "icons/icon-48.png",
+      "16": "icons/icon-16.png"
+   },
+   "permissions": ["*://*.baidu.com/*", "declarativeContent"],
+   "content_scripts": [{
+      "matches": ["*://*.baidu.com/*"],
+      "js": ["content.js"]
+   }],
+   "browser_action": {
+      "default_title": "屏蔽贴吧广告",
+      "default_icon": "icons/icon-16.png"
+   }
+}
