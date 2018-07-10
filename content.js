@@ -51,7 +51,7 @@ function deleteAdsForTiebaPosts(){
 		}
 		var topAd = document.getElementById('pagelet_frs-header/pagelet/head_content_middle');
 		if(topAd){
-			topAd.style.display = 'none';
+			topAd.remove();
 			chrome.runtime.sendMessage('REMOVED_AN_ADD');
 		}
 	}, 500);
