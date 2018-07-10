@@ -23,7 +23,7 @@ function deleteAdsForTiebaComments(){
 				}
 			}
 		}
-	}, 1000);
+	}, 500);
 }
 
 function deleteAdsForTiebaPosts(){
@@ -49,7 +49,12 @@ function deleteAdsForTiebaPosts(){
 				}
 			}
 		}
-	}, 1000);
+		var topAd = document.getElementById('pagelet_frs-header/pagelet/head_content_middle');
+		if(topAd){
+			topAd.style.display = 'none';
+			chrome.runtime.sendMessage('REMOVED_AN_ADD');
+		}
+	}, 500);
 }
 
 if(window.location.href.match(/^.*tieba\.baidu\.com\/p\/\d+$/)){
